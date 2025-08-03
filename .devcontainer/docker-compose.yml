@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  app:
+    build:
+      # WSL2 does not support build context as a relative path
+      # context: current directory(fullpath)..
+      dockerfile: ../Dockerfile
+    volumes:
+      - ..:/workspace:cached
+    command: sleep infinity
